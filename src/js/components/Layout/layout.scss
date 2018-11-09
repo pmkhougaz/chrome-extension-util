@@ -12,6 +12,14 @@
   flex-direction: 'column';
 }
 
+.spaceEvenly {
+  justify-content: space-evenly;
+}
+
+.spaceBetween {
+  justify-content: space-between;
+}
+
 /* Padding */
 
 .paddingXSmall {
@@ -36,7 +44,14 @@
 
 /* Extended */
 
+.betweenContainer {
+  @extend .container, .spaceBetween
+}
+
+.evenContainer {
+  @extend .container, .spaceEvenly
+}
+
 .paddedColumn {
-  @extend .column;
-  @extend .paddingMedium;
+  @extend .column, .paddingMedium
 }
