@@ -1,0 +1,42 @@
+/* Flexbox styling */
+
+.container {
+  display: flex;
+}
+
+.row {
+  flex-direction: 'row';
+}
+
+.column {
+  flex-direction: 'column';
+}
+
+/* Padding */
+
+.paddingXSmall {
+  padding: 1px;
+}
+
+.paddingSmall {
+  padding: 4px;
+}
+
+.paddingMedium {
+  padding: 8px;
+}
+
+.paddingLarge {
+  padding: 16px;
+}
+
+.paddingXLarge {
+  padding: 32px;
+}
+
+/* Extended */
+
+.paddedColumn {
+  @extend .column;
+  @extend .paddingMedium;
+}
