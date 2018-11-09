@@ -2,7 +2,7 @@ var webpack = require("webpack"),
     path = require("path"),
     fileSystem = require("fs"),
     env = require("./utils/env"),
-    combineLoaders = require('webpack-combine-loaders');
+    autoprefixer = require('autoprefixer');
     CleanWebpackPlugin = require("clean-webpack-plugin"),
     CopyWebpackPlugin = require("copy-webpack-plugin"),
     HtmlWebpackPlugin = require("html-webpack-plugin"),
@@ -32,18 +32,31 @@ var options = {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        loader: combineLoaders([
+        test: /\.scss$/,
+        exclude: /\.module\.scss$/,
+        use: [
+          'style-loader',
           {
-            loader: 'style-loader'
-          }, {
             loader: 'css-loader',
             query: {
               modules: true,
               localIdentName: '[name]__[local]___[hash:base64:5]'
             }
-          }
-        ])
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              sourceMap: true,
+              plugins: () => [
+                autoprefixer({
+                  browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9']
+                })
+              ]
+            }
+          },
+          'sass-loader'
+        ]
       },
       {
         test: new RegExp('\.(' + fileExtensions.join('|') + ')$'),
