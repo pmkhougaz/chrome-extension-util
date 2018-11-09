@@ -1,11 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Layout from './components/Layout.js';
+import Layout from './components/Layout/Layout.js';
 
-class App extends React.Component {
-  render() {
-    return <Layout />
-  }
+const App = () => {
+  return <Layout />
 }
 
 var node = document.getElementById('root');
