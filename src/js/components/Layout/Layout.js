@@ -1,17 +1,13 @@
 import React from 'react';
+import Header from '../Header/Header.js';
+import List from '../List/List.js';
 import styles from './layout.scss';
 
 export default () => {
   return (
-    <div className={styles.evenContainer}>
-      <div className={styles.paddedColumn}>Child Item</div>
-      <div className={styles.paddedColumn}>Child Item</div>
-      <div className={styles.paddedColumn}>Child Item</div>
-      <div className={styles.paddedColumn}>Child Item</div>
-      <div className={styles.paddedColumn}>Child Item</div>
-      <div className={styles.paddedColumn}>Child Item</div>
-      <div className={styles.paddedColumn}>Child Item</div>
-      <div className={styles.paddedColumn}>Child Item</div>
+    <div>
+      <Header />
+      <List />
     </div>
   );
 }

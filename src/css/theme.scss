@@ -1,0 +1,71 @@
+/* Flexbox styling */
+
+.container {
+  display: flex;
+}
+
+.row {
+  flex-direction: 'row';
+}
+
+.column {
+  flex-direction: 'column';
+}
+
+.spaceEvenly {
+  justify-content: space-evenly;
+}
+
+.spaceBetween {
+  justify-content: space-between;
+}
+
+/* Padding */
+
+.paddingXSmall {
+  padding: 1px;
+}
+
+.paddingSmall {
+  padding: 4px;
+}
+
+.paddingMedium {
+  padding: 8px;
+}
+
+.paddingLarge {
+  padding: 16px;
+}
+
+.paddingXLarge {
+  padding: 32px;
+}
+
+/* Extended */
+
+.betweenContainer {
+  @extend .container, .spaceBetween;
+}
+
+.evenContainer {
+  @extend .container, .spaceEvenly;
+}
+
+.paddedColumn {
+  @extend .column, .paddingMedium;
+}
+
+/* Interactive */
+
+.clickable {
+  cursor: pointer;
+}
+
+/* Colors */
+
+$gray: #4A4238;
+$blue: #4D5359;
+$blueLight: #508484;
+$teal: #79C99E;
+$green: #97DB4F;
