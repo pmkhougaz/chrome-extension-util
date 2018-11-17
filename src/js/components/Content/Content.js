@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './header.scss';
+import styles from './content.scss';
 
 export default ({ children }) => {
   return (
-    <div className={styles.sticky}>
+    <div className={styles.content}>
       {children}
     </div>
   );

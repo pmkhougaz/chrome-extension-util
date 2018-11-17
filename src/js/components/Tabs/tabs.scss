@@ -1,0 +1,10 @@
+@import '../../../css/theme.scss';
+
+.tabs {
+  @extend .evenContainer;
+  background-image: linear-gradient(to right, $white, $blue);
+}
+
+.tab {
+  @extend .paddedColumnXLarge, .clickable;
+}

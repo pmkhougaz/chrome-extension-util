@@ -1,4 +1,6 @@
 import React from 'react';
+import Text from '../Text/Text.js';
+
 import styles from './list.scss';
 
 const ITEMS = Array
@@ -13,7 +15,7 @@ export default () => {
           key={item}
           className={styles.paddingMedium}
         >
-          {item}
+          <Text>{item}</Text>
         </div>
       ))}
     </div>
