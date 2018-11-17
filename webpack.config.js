@@ -113,7 +113,10 @@ var options = {
       filename: "popup.html",
       chunks: ["popup"]
     }),
-    new WriteFilePlugin(),
+    new WriteFilePlugin({
+    	// exclude hot-update files
+    	test: /^(?!.*(hot)).*/,
+    }),
     new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
