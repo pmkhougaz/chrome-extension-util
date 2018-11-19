@@ -2,12 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Layout from './components/Layout/Layout.js';
 
-const AppContext = React.createContext();
+const store = { view: 'baz' };
+
+const AppContext = React.createContext(store);
 
 const App = () => {
   return (
-    <AppContext.Provider>
-      <Layout />
+    <AppContext.Provider value={store}>
+      <AppContext.Consumer>
+        {props => {
+          return ( <Layout {...props} /> )
+        }}
+      </AppContext.Consumer>
     </AppContext.Provider>
   );
 }
