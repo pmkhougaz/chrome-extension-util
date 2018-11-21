@@ -26,9 +26,7 @@ Tabs.propTypes = {
 
 Tabs.defaultProps = {
   tabs: [
-    { key: 'foo', name: 'Foo' },
-    { key: 'bar', name: 'Bar' },
-    { key: 'baz', name: 'Baz' }
+    { key: 'todos', name: 'Todos' },
   ]
 }
 
