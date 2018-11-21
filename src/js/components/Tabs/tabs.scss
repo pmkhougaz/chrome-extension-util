@@ -1,10 +1,22 @@
 @import '../../../css/theme.scss';
 
 .tabs {
-  @extend .evenContainer;
-  background-image: linear-gradient(to right, $white, $blue);
+  @extend .container;
 }
 
 .tab {
-  @extend .paddedColumnXLarge, .clickable;
+  @extend .centered, .clickable, .grow, .paddingXLarge, .transition;
+
+  background-color: color-palette(blue);
+  &:hover {
+    background-color: color-palette(white);
+  }
+}
+
+.activeTab {
+  @extend .tab;
+  background-color: color-palette(white);
+  &:hover {
+    background-color: color-palette(blue);
+  }
 }

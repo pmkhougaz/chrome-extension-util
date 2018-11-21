@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import propTypes from 'prop-types';
 
 import Header from '../Header/Header.js';
-import List from '../List/List.js';
+import Todos from '../Todos/Todos.js';
 import Content from '../Content/Content.js';
 import Tabs from '../Tabs/Tabs.js';
 
@@ -15,7 +15,7 @@ const Layout = ({ view }) => {
         <Tabs />
       </Header>
       <Content>
-        <List />
+        <Todos />
       </Content>
     </Fragment>
   );
