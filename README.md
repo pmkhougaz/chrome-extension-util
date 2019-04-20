@@ -9,10 +9,10 @@ If you are viewing this in Chrome, follow the steps below to display
 the extension in dev mode within your browser:
 - Clone the repository
 ```
-git clone https://github.com/piercefrawley/home-page.git   ```
+git clone https://github.com/piercefrawley/chrome-extension-util
 - Open and install
 ```
-cd home-page
+cd chrome-extension-util
 yarn install
 yarn start
 ```
