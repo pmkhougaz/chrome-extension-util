@@ -1,1 +1,9 @@
 @import '../../../css/theme.scss';
+
+.list {
+  @extend .column, .container, .spaceEvenly;
+}
+
+.listItem {
+  @extend .paddingMedium;
+}

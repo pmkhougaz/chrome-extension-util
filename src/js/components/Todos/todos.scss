@@ -1,0 +1,5 @@
+@import '../../../css/theme.scss';
+
+.todos {
+  @extend .centered, .column;
+}

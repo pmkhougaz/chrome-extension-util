@@ -1,3 +1,9 @@
+/* Global */
+
+html, body {
+  height: 100%;
+}
+
 /* Flexbox styling */
 
 .container {
@@ -5,11 +11,11 @@
 }
 
 .row {
-  flex-direction: 'row';
+  flex-direction: row;
 }
 
 .column {
-  flex-direction: 'column';
+  flex-direction: column;
 }
 
 .spaceEvenly {
@@ -19,6 +25,17 @@
 .spaceBetween {
   justify-content: space-between;
 }
+
+.grow {
+  flex-grow: 1
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 /* Padding */
 
@@ -42,46 +59,53 @@
   padding: 32px;
 }
 
-/* Extended */
-
-.betweenContainer {
-  @extend .container, .spaceBetween;
-}
-
-.evenContainer {
-  @extend .container, .spaceEvenly;
-}
-
-.paddedColumnXSmall {
-  @extend .column, .paddingXSmall;
-}
-
-.paddedColumnSmall {
-  @extend .column, .paddingSmall;
-}
-
-.paddedColumnMedium {
-  @extend .column, .paddingMedium;
-}
-
-.paddedColumnLarge {
-  @extend .column, .paddingLarge;
-}
-
-.paddedColumnXLarge {
-  @extend .column, .paddingXLarge;
-}
-
 /* Interactive */
 
 .clickable {
   cursor: pointer;
 }
 
+.transition {
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
 /* Colors */
 
-$blue: #a9d4ff;
-$gray: #4A4238;
-$green: #97DB4F;
-$teal: #79C99E;
-$white: #FFFFFF;
+@function color-palette($color, $tone: base) {
+  @return map-get(map-get($colors, $color), $tone);
+}
+
+$colors: (
+  blue: (
+    base: #9BC4E2,
+    dark: #659DBD,
+  ),
+  gray: (
+    base: #3b3b3b,
+  ),
+  green: (
+    base: #97DB4F,
+  ),
+  teal: (
+    base: #79C99E,
+  ),
+  white: (
+    base: #FAFAFA,
+  ),
+  olive: (
+    base: #8D8741,
+  ),
+  brown: (
+    base: #BC986A,
+  ),
+  beige: (
+    base: #FBEEC1,
+  ),
+  tan: (
+    base: #DAAD86,
+  ),
+);

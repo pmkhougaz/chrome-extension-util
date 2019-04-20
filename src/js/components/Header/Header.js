@@ -3,7 +3,7 @@ import styles from './header.scss';
 
 export default ({ children }) => {
   return (
-    <div className={styles.sticky}>
+    <div>
       {children}
     </div>
   );

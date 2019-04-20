@@ -1,3 +1,4 @@
+@import '../../../css/theme.scss';
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:100,300,400");
 
 .roboto {
@@ -7,9 +8,11 @@
 .base {
   @extend .roboto;
   font-size: 12px;
+  color: color-palette(gray);
 }
 
 .header {
   @extend .roboto;
   font-size: 16px;
+  color: color-palette(gray);
 }
