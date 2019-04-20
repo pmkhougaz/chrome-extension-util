@@ -5,10 +5,17 @@ import styles from './todos.scss';
 const Todos = ({ initialTodos }) => {
   const [state, dispatch] = useReducer(reducer, { todos: initialTodos });
 
+  const onSumbit = () => dispatch({
+    type: 'addTodo',
+    payload: state.inputValue
+  });
+
   return (
     <div className={styles.todos}>
       <div className={styles.paddingLarge}>
         <input
+          value={state.inputValue}
+          onKeyDown={e => e.key === 'Enter' && onSumbit()}
           onChange={e =>
             dispatch({
               type: 'onChangeInput',
@@ -16,24 +23,14 @@ const Todos = ({ initialTodos }) => {
             })
           }
         />
-        <button
-          onClick={() =>
-            dispatch({
-              type: 'addTodo',
-              payload: state.inputValue,
-            })
-          }
-        >
+        <button onClick={onSumbit}>
           Add Todo
         </button>
       </div>
-      <div className={styles.paddingLarge}>
-        Todos:
+      <div>
+        <div className={styles.paddingLarge}>Todos:</div>
         {state.todos.map(todo => (
-          <div
-            key={todo}
-            className={styles.paddingLarge}
-          >
+          <div key={todo} className={styles.paddingLarge}>
             {todo}
           </div>
         ))}
